@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Detail Produk</h1>
-    <p>Nama Produk: {{ $product['name'] }}</p>
-    <p>Harga Produk: Rp{{number_format($product['price'] , 0,',','.') }}</p>
+    <p>Nama Produk: {{ $products['name'] }}</p>
+    <p>Harga Produk: Rp{{number_format($products['price'] , 0,',','.') }}</p>
 </body>
 </html>
