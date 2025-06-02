@@ -1,22 +1,19 @@
-<?php
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@yield('title')</title>
+    <link href="https://tse1.mm.bing.net/th?id=OIP.ts9IX9TzpAhQWCH_mldDVgHaEK&pid=Api&P=0&h=220" rel="stylesheet">
+    @vite(['resources/css/app.css'])
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    @include('Partials.header')
 
-namespace App\Http\Controllers;
+    <div class="container mt-4">
+        @yield('content')
+    </div>
 
-use Illuminate\Http\Request;
-use Illuminate\View\View;
-
-class ProductController extends Controller
-{
-    private $products = [
-        1 => ['name' => 'Kaos Laravel', 'price' => 150000],
-        2 => ['name' => 'Stiker Coding', 'price' => 25000],
-        3 => ['name' => 'Notebook Dev', 'price' => 50000],
-    ];
-
-    // Menampilkan daftar produk
-    public function index()
-    {
-        $products = $this->products;
-        return view('products.index', compact('products'));
-    }
-}
+    @include('Partials.footer')
+</body>
+</html>

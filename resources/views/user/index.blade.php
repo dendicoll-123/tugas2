@@ -1,25 +1,21 @@
-<div>
-<h2>Form Tambah User</h2>
+<h2>Kontak admin</h2>
 
 @if (session('success'))
-<p style="color: green;">{{ session('success') }}</p>
+    <p>{{ session('success') }}</p>
 @endif
-
 @if ($errors->any())
-<ul style="color: red;">
-    @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
-    @endforeach
-</ul>
-
+    <ul>
+        @foreach ($errors as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
 @endif
 
-<form method="POST" action="{{ route('user.store') }}">
+<form method="POST" action="{{ route('contact.store') }}">
     @csrf
-    <input type="text" name="name" placeholder="Nama" value="{{ old('name') }}"><br>
-    <input type="email" name="email" placeholder="Email" value="{{ old('email') }}"><br>
-    <input type="password" name="password" placeholder="Password"><br>
-    <input type="password" name="password_confirmation" placeholder="Konfirmasi Password"><br>
-    <button type="submit">Simpan</button>
+    <input type="text" name="name" value="{{ old('name') }}" placeholder="Masukan Nama"><br>
+    <input type="email" name="email" value="{{ old('email') }}" placeholder="Masukan Email"><br>
+    <input type="number" name="telepon" value="{{ old('telepon') }}" placeholder="Masukan No Telp"><br>
+    <input type="text" name="message" value="{{ old('message') }}" placeholder="Masukan Pesan Anda"><br>
+    <button type="submit">Kirim</button>
 </form>
-
